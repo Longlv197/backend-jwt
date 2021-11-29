@@ -67,7 +67,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 # Hướng dẫn cài đặt
 
-1. git clone https://github.com/longlv72/backend_jwt.git
+1. git clone https://github.com/Longlv197/backend_jwt.git
 2. composer install
 3. cp .env.example .env
 4. php artisan key:generate
@@ -75,4 +75,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 6. php artisan migrate --seed
 7. php artisan serve
 8. The site will run localhost:8000
-# backend-jwt
+    # backend-jwt
