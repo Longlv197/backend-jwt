@@ -36,7 +36,7 @@
 {{-- Category --}}
       <li class="nav-item has-treeview menu-open">
         <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-user"></i>
+          <i class="nav-icon fas fa-list-alt"></i>
           <p>
             Quản lý danh mục
             <i class="right fas fa-angle-left"></i>
