@@ -23,6 +23,25 @@
 
 {{-- content --}}
 @section('content')
+    {{-- Alert message --}}
+    <div class="container-fluid py-2">
+        @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error!</strong> {{session('error')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @elseif (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{session('success')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+    </div>
+    {{-- end --}}
     <form action="" class="form-inline pl-3 pt-3 mb-3 text-right mr-2">
         <div class="form-group">
             <input type="text" name="key" placeholder="Search By Name" class="form-control">

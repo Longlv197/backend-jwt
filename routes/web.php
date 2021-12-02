@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::prefix('admin/products/')->group(function () {
     Route::get('add', function () {
         return view('pages.products.add');
     })->name('add');
+    Route::post('add', [ProductController::class, 'store'])->name('produt.store');
     Route::get('edit/{id}', function ($id) {
         return view('pages.products.edit');
     })->name('edit');

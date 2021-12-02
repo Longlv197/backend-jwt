@@ -23,7 +23,7 @@
 
 {{-- content --}}
 @section('content')
-    <form action="" method="post" class="">
+    <form action="{{ route('produt.store') }}" method="post" class="" enctype="multipart/form-data">
         @csrf
         <div class="pt-2 pr-3 pl-5">
             <div class="row">
@@ -50,7 +50,7 @@
                     {{-- image_list --}}
                     <div class="form-group">
                         <label for="">Image list</label>
-                        <input type="file" name="image_list" class="form-control-file" id="image_list">
+                        <input type="file" name="image_list[]" class="form-control-file" id="image_list" multiple>
                         @error('image_list')
                             <small class="help-block">{{ $message }}</small>
                         @enderror
@@ -73,8 +73,8 @@
 
                         <select class="form-control" name="category_id" id="category_id">
                             <option disabled>Select One</option>
-                            <option>Quần</option>
-                            <option>Áo</option>
+                            <option value="1">Quần</option>
+                            <option value="2">Áo</option>
                         </select>
                         @error('category')
                             <small class="help-block">{{ $message }}</small>
@@ -104,28 +104,28 @@
                         <label for="">Size Product</label>
                         <div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <input class="form-check-input" type="checkbox" id="size1" name="size[]" value="S">
                                 <label class="form-check-label" for="size1">Size S</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <input class="form-check-input" type="checkbox" id="size1" name="size[]" value="M">
                                 <label class="form-check-label" for="size1">Size M</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <input class="form-check-input" type="checkbox" id="size1" name="size[]" value="L">
                                 <label class="form-check-label" for="size1">Size L</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <input class="form-check-input" type="checkbox" id="size1" name="size[]" value="XL">
                                 <label class="form-check-label" for="size1">Size XL</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <input class="form-check-input" type="checkbox" id="size1" name="size[]" value="XXL">
                                 <label class="form-check-label" for="size1">Size XXL</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="size1" value="">
-                                <label class="form-check-label" for="size1">Size XXL</label>
+                                <input class="form-check-input" type="checkbox" id="size1" name="size[]" value="XXXL">
+                                <label class="form-check-label" for="size1">Size XXXL</label>
                             </div>
                         </div>
 
@@ -139,17 +139,17 @@
                         <label for="">Color Product</label>
                         <div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="color1" value="">
+                                <input class="form-check-input" type="checkbox" name="favcolor[]" id="color1" value="White">
                                 <label class="form-check-label" for="color1">Trắng</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="color2" value="">
+                                <input class="form-check-input" type="checkbox" name="favcolor[]" id="color2" value="Black">
                                 <label class="form-check-label" for="color2">Đen</label>
                             </div>
-                            <div class="form-check form-check-inline">
+                            {{-- <div class="form-check form-check-inline">
                                 <input type="color" id="favcolor" name="favcolor" value="#ebeb99"><br><br>
                                 <label class="form-check-label ml-1">Other</label>
-                            </div>
+                            </div> --}}
                         </div>
 
                         @error('color')
@@ -162,19 +162,19 @@
                         <label for="">Status</label>
                         <div class="form-check">
                             <label class="form-check-label" for="">
-                                <input type="radio" class="form-check-input" name="status" id="1">
+                                <input type="radio" class="form-check-input" name="status" value="1">
                                 <span>Public</span>
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label" for="">
-                                <input type="radio" class="form-check-input" name="status" id="2" checked>
+                                <input type="radio" class="form-check-input" name="status" value="2" checked>
                                 <span>Private</span>
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label" for="">
-                                <input type="radio" class="form-check-input" name="status" id="3">
+                                <input type="radio" class="form-check-input" name="status" value="3">
                                 <span>Out of order</span>
                             </label>
                         </div>

@@ -19,16 +19,16 @@ class CreateProductsTable extends Migration
             $table->double('price');
             $table->double('price_sale');
             $table->text('image');
-            $table->text('images');
+            $table->text('images')->nullable();
             $table->text('description');
             $table->smallInteger('state_id');
             $table->smallInteger('category_id');
-            $table->smallInteger('color_id');
-            $table->smallInteger('unit_id');
-            $table->integer('quantity');
-            $table->interger('view');
-            $table->interger('sold');
-            $table->float('rating');
+            $table->text('color_id');
+            $table->text('unit_id');
+            $table->integer('quantity')->nullable();
+            $table->integer('view');
+            $table->integer('sold')->nullable();
+            $table->float('rating')->nullable();
             $table->timestamps();
         });
     }
