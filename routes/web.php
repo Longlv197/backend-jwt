@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('pages.products.add');
+// });
+Route::prefix('admin/products/')->group(function () {
+    Route::get('/', function () {
+        return view('pages.products.index');
+    })->name('list');
+    Route::get('add', function () {
+        return view('pages.products.add');
+    })->name('add');
+    Route::get('edit/{id}', function ($id) {
+        return view('pages.products.edit');
+    })->name('edit');
 });
+
