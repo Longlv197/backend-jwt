@@ -1,10 +1,10 @@
 <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-      <!-- Add icons to the links using the .nav-icon class
-           with font-awesome or any other icon font library -->
+
+{{-- Product --}}
       <li class="nav-item has-treeview menu-open">
         <a href="#" class="nav-link active">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fab fa-product-hunt"></i>
           <p>
             Quản lý sản phẩm
             <i class="right fas fa-angle-left"></i>
@@ -13,88 +13,88 @@
         <ul class="nav nav-treeview">
           <li class="nav-item">
             <a href="#" class="nav-link active">
-              <i class="far fa-circle nav-icon"></i>
+              <i class="fas fa-list-ul nav-icon"></i>
               <p>Danh sách sản phẩm</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
+              <i class="fas fa-pen-square nav-icon"></i>
               <p>Cập nhật sản phẩm</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
+              <i class="fas fa-plus nav-icon"></i>
               <p>Thêm sản phẩm</p>
             </a>
           </li>
 
         </ul>
       </li>
-      {{-- <li class="nav-item">
+
+{{-- Category --}}
+      <li class="nav-item has-treeview menu-open">
         <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-th"></i>
+          <i class="nav-icon fas fa-user"></i>
           <p>
-            Widgets
-            <span class="right badge badge-danger">New</span>
-          </p>
-        </a>
-      </li> --}}
-      <li class="nav-item has-treeview">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-copy"></i>
-          <p>
-            Layout Options
-            <i class="fas fa-angle-left right"></i>
-            <span class="badge badge-info right">6</span>
+            Quản lý danh mục
+            <i class="right fas fa-angle-left"></i>
           </p>
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="pages/layout/top-nav.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Top Navigation</p>
+              <p>Danh sách danh mục</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Top Navigation + Sidebar</p>
+              <p>Cập nhật danh mục</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Boxed</p>
+              <p>Thêm danh mục</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Fixed Sidebar</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Fixed Navbar</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Fixed Footer</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Collapsed Sidebar</p>
-            </a>
-          </li>
+
         </ul>
       </li>
+
+{{-- User --}}
+    <li class="nav-item has-treeview menu-open">
+        <a href="#" class="nav-link">
+        <i class="nav-icon fas fas fa-user"></i>
+        <p>
+            Quản lý nhân viên
+            <i class="right fas fa-angle-left"></i>
+        </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Danh sách nhân viên</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Cập nhật thông tin</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Thêm nhân viên</p>
+                </a>
+            </li>
+        </ul>
+    </li>
 
 
     </ul>

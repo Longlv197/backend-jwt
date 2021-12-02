@@ -102,7 +102,33 @@
                     {{-- size --}}
                     <div class="form-group">
                         <label for="">Size Product</label>
-                        <input type="text" name="size" class="form-control" id="size" placeholder="size product">
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <label class="form-check-label" for="size1">Size S</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <label class="form-check-label" for="size1">Size M</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <label class="form-check-label" for="size1">Size L</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <label class="form-check-label" for="size1">Size XL</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <label class="form-check-label" for="size1">Size XXL</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="size1" value="">
+                                <label class="form-check-label" for="size1">Size XXL</label>
+                            </div>
+                        </div>
+
                         @error('size')
                             <small class="help-block">{{ $message }}</small>
                         @enderror
@@ -111,7 +137,21 @@
                     {{-- color --}}
                     <div class="form-group">
                         <label for="">Color Product</label>
-                        <input type="text" name="color" class="form-control" id="color" placeholder="color product">
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="color1" value="">
+                                <label class="form-check-label" for="color1">Trắng</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="color2" value="">
+                                <label class="form-check-label" for="color2">Đen</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="color" id="favcolor" name="favcolor" value="#ebeb99"><br><br>
+                                <label class="form-check-label ml-1">Other</label>
+                            </div>
+                        </div>
+
                         @error('color')
                             <small class="help-block">{{ $message }}</small>
                         @enderror
@@ -120,17 +160,21 @@
                     {{-- status --}}
                     <div class="form-group">
                         <label for="">Status</label>
-                        <div class="radio">
-                            <label for="">
-                                <input type="radio" name="status" id="1" checked>
+                        <div class="form-check">
+                            <label class="form-check-label" for="">
+                                <input type="radio" class="form-check-input" name="status" id="1">
                                 <span>Public</span>
                             </label>
-                            <label for="">
-                                <input type="radio" name="status" id="2" checked>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="">
+                                <input type="radio" class="form-check-input" name="status" id="2" checked>
                                 <span>Private</span>
                             </label>
-                            <label for="">
-                                <input type="radio" name="status" id="3" checked>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="">
+                                <input type="radio" class="form-check-input" name="status" id="3">
                                 <span>Out of order</span>
                             </label>
                         </div>
