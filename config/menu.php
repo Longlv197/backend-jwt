@@ -13,7 +13,7 @@
         [
             'nav-icon' => 'fas fa-list-alt',
             "label" => 'Đơn hàng',
-            'route-name' => 'color.index'
+            'route-name' => 'order.index'
         ],
         [
             'nav-icon' => 'fas fa-list-alt',

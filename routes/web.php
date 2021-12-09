@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ColorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -55,6 +56,14 @@ Route::prefix('admin/')->group(function () {
         Route::delete('delete/{id}', [SizeController::class, 'delete'])->name('size.delete');
         Route::get('edit/{id}', [SizeController::class, 'edit'])->name('size.edit');
         Route::post('edit/{id}', [SizeController::class, 'edit'])->name('size.edit');
+    });
+
+    Route::prefix('orders/')->group(function () {
+        Route::get('/', [OrderController::class, 'index'])->name('order.index');
+        // Route::get('add', [ProductController::class, 'add'])->name('product.add');
+        // Route::post('add', [ProductController::class, 'store'])->name('product.store');
+        // Route::delete('delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+        // Route::get('edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
     });
 });
 
