@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 {{-- title --}}
-@section('title', 'Products')
+@section('title', 'Categories')
 
 @section('style-libraries')
 
@@ -9,20 +9,11 @@
 
 {{-- style --}}
 @section('styles_section')
-    <link rel="stylesheet" href="{{ asset('css/products/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/categories/index.css') }}">
 @endsection
 
 @section('scripts_section')
-    <script src="{{ asset('js/products/index.js') }}"></script>
-    {{-- <script>
-        $(document).ready(function () {
-            $(".delete-product").on("click", function (e) {
-                const id = $(this).attr("id-product");
-                let url = {{ route('product.delete') }}
-                console.log(url)
-            })
-        }
-    </script> --}}
+    <script src="{{ asset('js/categories/index.js') }}"></script>
 @endsection
 
 {{-- content --}}
@@ -30,19 +21,19 @@
     {{-- Alert message --}}
     <div class="container-fluid py-2">
         @if (session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error!</strong> {{session('error')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> {{session('error')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         @elseif (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success!</strong> {{session('success')}}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> {{session('success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         @endif
     </div>
     {{-- end --}}
@@ -56,39 +47,39 @@
                 <i class="fa fa-search"></i>
             </button>
         </form>
-        <a class="btn btn-success" href="{{ route('product.add') }}" role="button">Thêm mới sản phẩm</a>
+        <a class="btn btn-success" href="{{ route('category.create') }}" role="button">Thêm mới danh mục</a>
     </div>
     <table class="table ml-3">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Price </th>
-                <th>Price Sale</th>
+                <th>Category Name</th>
+                <th>Categories Parent </th>
                 <th>Status</th>
-                <th>Quantity</th>
                 <th>Created date</th>
                 <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody id="tbody">
-            @if($products)
-                @foreach ($products as $product)
-                    <tr id="product-{{ $product->id }}">
-                        <td scope="row">{{ $product->id }}</td>
-                        <td class="col-2 text-truncate name">{{ $product->name }}</td>
-                        <td class="category">Quần áo</td>
-                        <td class="price">{{ $product->price }}</td>
-                        <td class="price_sale">{{ $product->price_sale }}</td>
-                        <td class="state">{{ $product->state }}</td>
-                        <td class="quantity">{{ $product->quantity }}</td>
-                        <td class="created_at">{{ $product->created_at->format('s-m-h : d/m/Y') }}</td>
+            @if($categories)
+                @foreach ($categories as $categorie)
+                    <tr id="category-{{ $categorie->id }}">
+                        <td scope="row">{{ $categorie->id }}</td>
+                        <td class="categoryName">{{ $categorie->categoryName }}</td>
+                        <td class="parentID">{{ $categorie->parentID }}</td>
+                        <td class="status">
+                            @if ($categorie->status === 1)
+                                <span class="text-success bg-success p-1 rounded">public</span>
+                            @else
+                                <span class="text-white bg-dark rounded">public</span>
+                            @endif
+                        </td>
+                        <td class="created_at">{{ $categorie->created_at->format('s-m-h : d/m/Y') }}</td>
                         <td class="text-center actions">
                             <a
-                                id-product={{ $product->id }}
+                                id-category={{ $categorie->id }}
                                 class="btn btn-warning mr-2"
-                                href="{{ route('product.edit', ['id'=>$product->id]) }}"
+                                href="{{ route('category.edit', ['id'=>$categorie->id]) }}"
                                 role="button"
                             >
                                 Sửa
@@ -96,7 +87,7 @@
                             <a
                                 class="btn btn-danger m1-2 btn-delete"
                                 role="button"
-                                data-id="{{ $product->id }}"
+                                data-id="{{ $categorie->id }}"
                                 {{-- data-toggle="modal" --}}
                                 {{-- data-target="#deleteModal" --}}
                             >
@@ -112,13 +103,13 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Xóa danh mục</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                                <h5 class="text-center">Bạn muốn xóa sản phẩm này?</h5>
+                                <h5 class="text-center">Bạn muốn xóa danh mục này?</h5>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                     <button type="button" class="btn btn-sm btn-danger btn-delete-product">Yes, Delete Contact</button>

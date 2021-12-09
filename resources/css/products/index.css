@@ -1,3 +1,5 @@
-h1 {
-    color: red;
+.name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }

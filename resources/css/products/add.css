@@ -1,0 +1,34 @@
+#frame_list,
+#frames {
+    display: flex;
+    min-width: max-content;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+#frame_list,
+#frames img:not(:last-child) {
+    margin-right: 10px;
+}
+
+#frame_list img,
+#frames img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px; /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 150px; /* Set a small width */
+    height: 100px;
+    cursor: pointer;
+}
+
+#frame_list img:hover,
+#frames img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Tahoma, Verdana, sans-serif;
+}
