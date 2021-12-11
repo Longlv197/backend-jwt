@@ -26,4 +26,26 @@ class ProductController extends Controller
         ];
         return response()->json($data, 200);
     }
+
+    public function getProductById($id)
+    {
+        $product = Product::find($id);
+        if ($product) {
+            $product = $product->toArray();
+            $product['images'] = json_decode($product['images'], true);
+            $product['unit_id'] = json_decode($product['unit_id'], true);
+            $data = [
+                "message" => "Lấy thông tin sản phẩm thành công",
+                "data" => $product
+            ];
+            return response()->json($data, 200);
+        } else {
+            $data = [
+                "message" => "Sản phẩm không tồn tại",
+                "data" => null
+            ];
+            return response()->json($data, 200);
+        }
+
+    } 
 }
